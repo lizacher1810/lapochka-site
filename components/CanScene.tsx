@@ -18,7 +18,7 @@ const NATURAL_HEIGHT = 1.882;
 const HERO = { xFrac: 0.69, yFrac: 0.535, heightFrac: 0.72, tiltDeg: 12.42 };
 const FEATURES = { xFrac: 0.5, yFrac: 0.46, heightFrac: 0.68, tiltDeg: 0 };
 const HERO_M = { xFrac: 0.52, yFrac: 0.29, heightFrac: 0.4, tiltDeg: 12 };
-const FEATURES_M = { xFrac: 0.88, yFrac: 0.52, heightFrac: 0.56, tiltDeg: 0 };
+const FEATURES_M = { xFrac: 0.88, yFrac: 0.44, heightFrac: 0.56, tiltDeg: 0 };
 
 const MOBILE_MAX = 768;
 

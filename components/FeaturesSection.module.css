@@ -151,6 +151,16 @@
     font-size: 15vw;
   }
 
+  /* Half-disc tucked behind the can at the right edge (a bit smaller than the
+     can), instead of the centered full circle used on desktop. */
+  .blob {
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vh;
+    height: 50vh;
+  }
+
   /* A few small accents on the right / corners, none over the left text. */
   .photo {
     max-width: 22vw;
