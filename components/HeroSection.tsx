@@ -107,35 +107,20 @@ export function HeroSection() {
         <img src={asset("/assets/screen1/icon-menu.svg")} alt="Меню" className={styles.menuIcon} />
         <img src={asset("/assets/screen1/logo.svg")} alt="lapochka" className={styles.logo} />
         <div className={styles.navIcons}>
-          <img src={asset("/assets/screen1/icon-search.svg")} alt="Поиск" />
-          <img src={asset("/assets/screen1/icon-heart.svg")} alt="Избранное" />
-          <svg
-            className={styles.navSvg}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#111"
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            role="img"
-            aria-label="Корзина"
-          >
-            <path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.4H8.9a1.5 1.5 0 0 1-1.5-1.4L6.5 8Z" />
-            <path d="M9 8V6.8a3 3 0 0 1 6 0V8" />
+          <svg className={styles.navSvg} viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" role="img" aria-label="Поиск">
+            <circle cx="10.5" cy="10.5" r="6.5" />
+            <path d="M20 20l-4.6-4.6" />
           </svg>
-          <svg
-            className={styles.navSvg}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#111"
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            role="img"
-            aria-label="Профиль"
-          >
-            <circle cx="12" cy="8" r="3.4" />
-            <path d="M5.8 20a6.2 6.2 0 0 1 12.4 0" />
+          <svg className={styles.navSvg} viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" role="img" aria-label="Избранное">
+            <path d="M12 20.3S3.8 15.4 3.8 9.4A4.2 4.2 0 0 1 12 7.1a4.2 4.2 0 0 1 8.2 2.3c0 6-8.2 10.9-8.2 10.9Z" />
+          </svg>
+          <svg className={styles.navSvg} viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" role="img" aria-label="Корзина">
+            <path d="M5.5 8.5h13l-1 11.4a1.4 1.4 0 0 1-1.4 1.3H7.9a1.4 1.4 0 0 1-1.4-1.3L5.5 8.5Z" />
+            <path d="M8.8 8.5V7a3.2 3.2 0 0 1 6.4 0v1.5" />
+          </svg>
+          <svg className={styles.navSvg} viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" role="img" aria-label="Профиль">
+            <circle cx="12" cy="8" r="3.7" />
+            <path d="M5.4 20.5a6.6 6.6 0 0 1 13.2 0" />
           </svg>
         </div>
       </nav>
