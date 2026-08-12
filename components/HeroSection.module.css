@@ -1,0 +1,170 @@
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--purple-bg);
+}
+
+.blobA,
+.blobB {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  width: 73%;
+}
+
+.blobA {
+  left: calc(50% + 103px);
+  top: -16%;
+  transform: rotate(-21.65deg);
+}
+
+.blobB {
+  left: -21.35%;
+  top: -0.9%;
+  width: 64%;
+  transform: rotate(-66.43deg);
+}
+
+.ghostText {
+  position: absolute;
+  z-index: 2;
+  left: 2.1%;
+  top: 87.3%;
+  margin: 0;
+  font-weight: 800;
+  font-size: 5.1vw;
+  line-height: 1;
+  text-transform: lowercase;
+  color: rgba(77, 38, 128, 0.37);
+  white-space: nowrap;
+}
+
+.photo {
+  position: absolute;
+  z-index: 10;
+  width: auto;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.nav {
+  position: absolute;
+  z-index: 20;
+  top: 3.9%;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.1%;
+}
+
+.menuIcon {
+  width: clamp(28px, 2.6vw, 50px);
+}
+
+.logo {
+  width: clamp(120px, 11vw, 212px);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -0.4vw;
+}
+
+.navIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navIcons img {
+  width: 24px;
+  height: 24px;
+}
+
+.bagIcon,
+.userIcon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.bagIcon img,
+.userIcon img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.headline {
+  position: absolute;
+  z-index: 20;
+  left: 2.1%;
+  top: 48.3%;
+  margin: 0;
+  width: 47.4%;
+  font-weight: 800;
+  text-transform: lowercase;
+  font-size: clamp(2.2rem, 4.15vw, 5rem);
+  line-height: 1.02;
+  color: var(--ink);
+}
+
+.subcopy {
+  position: absolute;
+  z-index: 20;
+  left: 18.2%;
+  top: 65.1%;
+  margin: 0;
+  width: 26%;
+  max-width: 430px;
+  font-weight: 400;
+  font-size: clamp(0.8rem, 0.83vw, 1rem);
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.cta {
+  position: absolute;
+  z-index: 20;
+  left: 2.1%;
+  top: 74.3%;
+  background: var(--purple-deep);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.1rem 2.4rem;
+  border-radius: 106px;
+}
+
+@media (max-width: 900px) {
+  .headline {
+    width: 92%;
+    top: 30%;
+  }
+
+  .subcopy {
+    left: 4%;
+    top: 58%;
+    width: 60%;
+  }
+
+  .cta {
+    top: 72%;
+  }
+
+  .ghostText {
+    font-size: 8vw;
+    top: 92%;
+  }
+
+  .photo {
+    opacity: 0.7;
+  }
+}

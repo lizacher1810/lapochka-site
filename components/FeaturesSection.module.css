@@ -1,0 +1,122 @@
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--purple-bg);
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  width: 55vmin;
+  height: 55vmin;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.ghostText {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: center;
+  font-weight: 800;
+  text-transform: lowercase;
+  font-size: 8vw;
+  line-height: 0.9;
+  color: rgba(77, 38, 128, 0.035);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.photo {
+  position: absolute;
+  z-index: 10;
+  width: auto;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.feature {
+  position: absolute;
+  z-index: 20;
+  width: min(19vw, 320px);
+}
+
+.feature h3 {
+  margin: 0 0 0.6rem;
+  font-weight: 800;
+  text-transform: lowercase;
+  white-space: nowrap;
+  font-size: clamp(1.1rem, 1.56vw, 1.875rem);
+  color: var(--ink);
+}
+
+.feature p {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(0.8rem, 0.83vw, 1rem);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.featureTopLeft {
+  left: 13.28%;
+  top: 25%;
+}
+
+.featureBottomLeft {
+  left: 13.28%;
+  top: 63.7%;
+}
+
+.featureTopRight {
+  left: 71.04%;
+  top: 25%;
+}
+
+.featureBottomRight {
+  left: 71.04%;
+  top: 63.7%;
+}
+
+.cta {
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 89.5%;
+  background: var(--purple-deep);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.1rem 2.4rem;
+  border-radius: 106px;
+}
+
+@media (max-width: 900px) {
+  .feature {
+    width: 42vw;
+  }
+
+  .featureTopLeft,
+  .featureBottomLeft {
+    left: 4%;
+  }
+
+  .featureTopRight,
+  .featureBottomRight {
+    left: 54%;
+  }
+
+  .ghostText {
+    font-size: 14vw;
+  }
+}
