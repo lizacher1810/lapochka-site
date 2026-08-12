@@ -4,12 +4,13 @@ import { useEffect, useMemo } from "react";
 import * as THREE from "three";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { prepareCanBody } from "@/lib/three/prepareCanBody";
+import { asset } from "@/lib/asset";
 
-useGLTF.preload("/models/can.glb");
+useGLTF.preload(asset("/models/can.glb"));
 
 export function Can(props: { scale?: number }) {
-  const { scene } = useGLTF("/models/can.glb");
-  const rawLabelTexture = useTexture("/textures/label-wrap.png");
+  const { scene } = useGLTF(asset("/models/can.glb"));
+  const rawLabelTexture = useTexture(asset("/textures/label-wrap.png"));
 
   const cloned = useMemo(() => scene.clone(true), [scene]);
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useParallax } from "@/hooks/useParallax";
+import { asset } from "@/lib/asset";
 import styles from "./HeroSection.module.css";
 
 type Photo = {
@@ -81,15 +82,15 @@ export function HeroSection() {
 
   return (
     <section ref={sectionRef} className={styles.section}>
-      <img src="/assets/screen1/blob-1.svg" alt="" className={styles.blobA} />
-      <img src="/assets/screen1/blob-2.svg" alt="" className={styles.blobB} />
+      <img src={asset("/assets/screen1/blob-1.svg")} alt="" className={styles.blobA} />
+      <img src={asset("/assets/screen1/blob-2.svg")} alt="" className={styles.blobB} />
 
       <p className={styles.ghostText}>blueberry × sagan-dalya × lavender</p>
 
       {PHOTOS.map((photo, i) => (
         <img
           key={i}
-          src={photo.src}
+          src={asset(photo.src)}
           alt=""
           className={styles.photo}
           style={{
@@ -103,18 +104,18 @@ export function HeroSection() {
       ))}
 
       <nav className={styles.nav}>
-        <img src="/assets/screen1/icon-menu.svg" alt="Меню" className={styles.menuIcon} />
-        <img src="/assets/screen1/logo.svg" alt="lapochka" className={styles.logo} />
+        <img src={asset("/assets/screen1/icon-menu.svg")} alt="Меню" className={styles.menuIcon} />
+        <img src={asset("/assets/screen1/logo.svg")} alt="lapochka" className={styles.logo} />
         <div className={styles.navIcons}>
-          <img src="/assets/screen1/icon-search.svg" alt="Поиск" />
-          <img src="/assets/screen1/icon-heart.svg" alt="Избранное" />
+          <img src={asset("/assets/screen1/icon-search.svg")} alt="Поиск" />
+          <img src={asset("/assets/screen1/icon-heart.svg")} alt="Избранное" />
           <span className={styles.bagIcon}>
-            <img src="/assets/screen1/icon-bag-body.svg" alt="" />
-            <img src="/assets/screen1/icon-bag-handle.svg" alt="" />
+            <img src={asset("/assets/screen1/icon-bag-body.svg")} alt="" />
+            <img src={asset("/assets/screen1/icon-bag-handle.svg")} alt="" />
           </span>
           <span className={styles.userIcon}>
-            <img src="/assets/screen1/icon-user-head.svg" alt="" />
-            <img src="/assets/screen1/icon-user-body.svg" alt="" />
+            <img src={asset("/assets/screen1/icon-user-head.svg")} alt="" />
+            <img src={asset("/assets/screen1/icon-user-body.svg")} alt="" />
           </span>
           <span className="sr-only">Профиль</span>
         </div>

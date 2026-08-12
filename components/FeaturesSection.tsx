@@ -1,6 +1,7 @@
 "use client";
 
 import { useParallax } from "@/hooks/useParallax";
+import { asset } from "@/lib/asset";
 import styles from "./FeaturesSection.module.css";
 
 type Photo = {
@@ -60,7 +61,7 @@ export function FeaturesSection() {
 
   return (
     <section ref={sectionRef} className={styles.section}>
-      <img src="/assets/screen2/blob-circle.svg" alt="" className={styles.blob} />
+      <img src={asset("/assets/screen2/blob-circle.svg")} alt="" className={styles.blob} />
 
       <p className={styles.ghostText}>
         blueberry
@@ -73,7 +74,7 @@ export function FeaturesSection() {
       {PHOTOS.map((photo, i) => (
         <img
           key={i}
-          src={photo.src}
+          src={asset(photo.src)}
           alt=""
           className={styles.photo}
           style={{
