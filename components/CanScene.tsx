@@ -15,10 +15,14 @@ const NATURAL_HEIGHT = 1.882;
 // (can center as a fraction of viewport, and can height as a fraction of
 // viewport height). Desktop overlays the can beside the copy; the mobile
 // mock stacks it — can on top of the hero, and off to the right on features.
-const HERO = { xFrac: 0.69, yFrac: 0.535, heightFrac: 0.72, tiltDeg: 12.42 };
-const FEATURES = { xFrac: 0.5, yFrac: 0.46, heightFrac: 0.68, tiltDeg: 0 };
-const HERO_M = { xFrac: 0.52, yFrac: 0.29, heightFrac: 0.4, tiltDeg: 12 };
-const FEATURES_M = { xFrac: 0.88, yFrac: 0.44, heightFrac: 0.56, tiltDeg: 0 };
+//
+// heightFrac is kept EQUAL across the two keyframes of a breakpoint so the can
+// never grows or shrinks while it travels between screens (that size change
+// read as a "jump"). Only position and rotation interpolate.
+const HERO = { xFrac: 0.69, yFrac: 0.55, heightFrac: 0.7, tiltDeg: 12.42 };
+const FEATURES = { xFrac: 0.5, yFrac: 0.462, heightFrac: 0.7, tiltDeg: 0 };
+const HERO_M = { xFrac: 0.52, yFrac: 0.263, heightFrac: 0.44, tiltDeg: 12 };
+const FEATURES_M = { xFrac: 0.88, yFrac: 0.453, heightFrac: 0.44, tiltDeg: 0 };
 
 const MOBILE_MAX = 768;
 
