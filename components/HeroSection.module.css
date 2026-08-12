@@ -81,25 +81,11 @@
   gap: 10px;
 }
 
-.navIcons img {
+.navIcons img,
+.navSvg {
   width: 24px;
   height: 24px;
-}
-
-.bagIcon,
-.userIcon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  display: inline-block;
-}
-
-.bagIcon img,
-.userIcon img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  display: block;
 }
 
 .headline {

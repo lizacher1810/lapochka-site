@@ -109,15 +109,34 @@ export function HeroSection() {
         <div className={styles.navIcons}>
           <img src={asset("/assets/screen1/icon-search.svg")} alt="Поиск" />
           <img src={asset("/assets/screen1/icon-heart.svg")} alt="Избранное" />
-          <span className={styles.bagIcon}>
-            <img src={asset("/assets/screen1/icon-bag-body.svg")} alt="" />
-            <img src={asset("/assets/screen1/icon-bag-handle.svg")} alt="" />
-          </span>
-          <span className={styles.userIcon}>
-            <img src={asset("/assets/screen1/icon-user-head.svg")} alt="" />
-            <img src={asset("/assets/screen1/icon-user-body.svg")} alt="" />
-          </span>
-          <span className="sr-only">Профиль</span>
+          <svg
+            className={styles.navSvg}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111"
+            strokeWidth={1.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            role="img"
+            aria-label="Корзина"
+          >
+            <path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.4H8.9a1.5 1.5 0 0 1-1.5-1.4L6.5 8Z" />
+            <path d="M9 8V6.8a3 3 0 0 1 6 0V8" />
+          </svg>
+          <svg
+            className={styles.navSvg}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111"
+            strokeWidth={1.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            role="img"
+            aria-label="Профиль"
+          >
+            <circle cx="12" cy="8" r="3.4" />
+            <path d="M5.8 20a6.2 6.2 0 0 1 12.4 0" />
+          </svg>
         </div>
       </nav>
 
