@@ -101,22 +101,55 @@
   border-radius: 106px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  /* Stacked mobile layout: the four features run down the left column in
+     DOM order, the can (canvas) sits off to the right. */
   .feature {
-    width: 42vw;
+    left: 5%;
+    width: 50%;
   }
 
-  .featureTopLeft,
+  .feature h3 {
+    white-space: normal;
+    font-size: 21px;
+    margin-bottom: 0.4rem;
+  }
+
+  .feature p {
+    font-size: 13px;
+  }
+
+  .featureTopLeft {
+    top: 6%;
+  }
+
   .featureBottomLeft {
-    left: 4%;
+    top: 29%;
   }
 
-  .featureTopRight,
+  .featureTopRight {
+    left: 5%;
+    top: 51%;
+  }
+
   .featureBottomRight {
-    left: 54%;
+    left: 5%;
+    top: 73%;
   }
 
   .ghostText {
-    font-size: 14vw;
+    font-size: 15vw;
+  }
+
+  .photo {
+    max-width: 26vw;
+    max-height: 20vh;
+    object-fit: contain;
+  }
+
+  .cta {
+    top: 92%;
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
   }
 }

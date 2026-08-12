@@ -13,9 +13,14 @@ const NATURAL_HEIGHT = 1.882;
 
 // Screen-space keyframes lifted from the Figma hero/features frames
 // (can center as a fraction of viewport, and can height as a fraction of
-// viewport height).
+// viewport height). Desktop overlays the can beside the copy; the mobile
+// mock stacks it — can on top of the hero, and off to the right on features.
 const HERO = { xFrac: 0.69, yFrac: 0.535, heightFrac: 0.72, tiltDeg: 12.42 };
 const FEATURES = { xFrac: 0.5, yFrac: 0.46, heightFrac: 0.68, tiltDeg: 0 };
+const HERO_M = { xFrac: 0.52, yFrac: 0.29, heightFrac: 0.4, tiltDeg: 12 };
+const FEATURES_M = { xFrac: 0.85, yFrac: 0.52, heightFrac: 0.56, tiltDeg: 0 };
+
+const MOBILE_MAX = 768;
 
 function easeInOutCubic(t: number) {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -26,16 +31,20 @@ function CanRig() {
   const progressRef = useTransitionProgress();
   const { camera } = useThree();
 
-  useFrame(() => {
+  useFrame((state) => {
     const group = groupRef.current;
     if (!group || !(camera instanceof THREE.PerspectiveCamera)) return;
 
     const t = easeInOutCubic(progressRef.current);
 
-    const xFrac = THREE.MathUtils.lerp(HERO.xFrac, FEATURES.xFrac, t);
-    const yFrac = THREE.MathUtils.lerp(HERO.yFrac, FEATURES.yFrac, t);
-    const heightFrac = THREE.MathUtils.lerp(HERO.heightFrac, FEATURES.heightFrac, t);
-    const tiltDeg = THREE.MathUtils.lerp(HERO.tiltDeg, FEATURES.tiltDeg, t);
+    const isMobile = state.size.width <= MOBILE_MAX;
+    const hero = isMobile ? HERO_M : HERO;
+    const features = isMobile ? FEATURES_M : FEATURES;
+
+    const xFrac = THREE.MathUtils.lerp(hero.xFrac, features.xFrac, t);
+    const yFrac = THREE.MathUtils.lerp(hero.yFrac, features.yFrac, t);
+    const heightFrac = THREE.MathUtils.lerp(hero.heightFrac, features.heightFrac, t);
+    const tiltDeg = THREE.MathUtils.lerp(hero.tiltDeg, features.tiltDeg, t);
 
     const target = screenToWorld(xFrac, yFrac, camera, 0);
     group.position.copy(target);

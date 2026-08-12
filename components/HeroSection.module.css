@@ -129,28 +129,72 @@
   border-radius: 106px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  /* Stacked mobile layout: nav on top, can (canvas) in the upper area,
+     then headline / subcopy / full-width button / ghost line below it. */
+  .nav {
+    top: 2.5%;
+    padding: 0 5%;
+  }
+
+  .menuIcon {
+    width: 28px;
+  }
+
+  .logo {
+    width: 108px;
+    top: 0;
+  }
+
+  .navIcons {
+    gap: 9px;
+  }
+
+  .navIcons img,
+  .navSvg {
+    width: 21px;
+    height: 21px;
+  }
+
   .headline {
-    width: 92%;
-    top: 30%;
+    left: 5%;
+    width: 90%;
+    top: 52%;
+    font-size: 31px;
+    line-height: 1.06;
   }
 
   .subcopy {
-    left: 4%;
-    top: 58%;
-    width: 60%;
+    left: 5%;
+    width: 90%;
+    max-width: none;
+    top: 68.5%;
+    font-size: 14px;
+    line-height: 1.4;
   }
 
   .cta {
-    top: 72%;
+    left: 5%;
+    right: 5%;
+    width: auto;
+    transform: none;
+    top: 82%;
+    text-align: center;
+    padding: 1.1rem 1rem;
   }
 
   .ghostText {
-    font-size: 8vw;
-    top: 92%;
+    left: 5%;
+    top: 93%;
+    font-size: 4.6vw;
   }
 
+  /* The decorative cut-outs render at natural resolution, which is huge on a
+     phone — cap them so they read as small accents around the can. */
   .photo {
-    opacity: 0.7;
+    opacity: 0.9;
+    max-width: 33vw;
+    max-height: 26vh;
+    object-fit: contain;
   }
 }
