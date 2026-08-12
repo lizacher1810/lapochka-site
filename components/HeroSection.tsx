@@ -92,6 +92,7 @@ export function HeroSection() {
           key={i}
           src={asset(photo.src)}
           alt=""
+          data-i={i}
           className={styles.photo}
           style={{
             ...photo.style,
@@ -125,14 +126,16 @@ export function HeroSection() {
         </div>
       </nav>
 
-      <h1 className={styles.headline}>
-        лимонад, в котором встретились байкал и лето
-      </h1>
-      <p className={styles.subcopy}>
-        Черника, саган-дайля и лаванда в освежающем натуральном лимонаде без
-        сахара. Попробуйте вкус, который сложно забыть.
-      </p>
-      <button className={styles.cta}>попробовать</button>
+      <div className={styles.copy}>
+        <h1 className={styles.headline}>
+          лимонад, в котором встретились байкал и лето
+        </h1>
+        <p className={styles.subcopy}>
+          Черника, саган-дайля и лаванда в освежающем натуральном лимонаде без
+          сахара. Попробуйте вкус, который сложно забыть.
+        </p>
+        <button className={styles.cta}>попробовать</button>
+      </div>
     </section>
   );
 }

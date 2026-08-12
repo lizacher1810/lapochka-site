@@ -129,21 +129,32 @@
   border-radius: 106px;
 }
 
+/* On desktop the wrapper is transparent so headline/subcopy/cta keep their
+   own absolute positions; on mobile it becomes the stacked copy column. */
+.copy {
+  display: contents;
+}
+
 @media (max-width: 768px) {
   /* Stacked mobile layout: nav on top, can (canvas) in the upper area,
-     then headline / subcopy / full-width button / ghost line below it. */
+     then the copy column, then the ghost line. */
   .nav {
     top: 2.5%;
     padding: 0 5%;
   }
 
+  /* No burger on mobile; logo sits at the left, icons at the right. */
   .menuIcon {
-    width: 28px;
+    display: none;
   }
 
   .logo {
-    width: 108px;
-    top: 0;
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    width: 118px;
+    margin-right: auto;
   }
 
   .navIcons {
@@ -156,31 +167,48 @@
     height: 21px;
   }
 
-  .headline {
+  /* Stacked copy column with a fixed 10px gap between headline and subcopy. */
+  .copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 20;
     left: 5%;
     width: 90%;
-    top: 52%;
+    top: 52.5%;
+  }
+
+  .headline {
+    position: static;
+    left: auto;
+    top: auto;
+    width: 100%;
+    margin: 0;
     font-size: 31px;
     line-height: 1.06;
   }
 
   .subcopy {
-    left: 5%;
-    width: 90%;
+    position: static;
+    left: auto;
+    top: auto;
+    width: 100%;
     max-width: none;
-    top: 68.5%;
+    margin: 10px 0 0;
     font-size: 14px;
     line-height: 1.4;
   }
 
   .cta {
-    left: 5%;
-    right: 5%;
-    width: auto;
+    position: static;
+    left: auto;
+    top: auto;
+    width: 100%;
     transform: none;
-    top: 82%;
+    margin-top: 22px;
     text-align: center;
-    padding: 1.1rem 1rem;
+    padding: 1.05rem 1rem;
   }
 
   .ghostText {
@@ -189,12 +217,20 @@
     font-size: 4.6vw;
   }
 
-  /* The decorative cut-outs render at natural resolution, which is huge on a
-     phone — cap them so they read as small accents around the can. */
+  /* Fewer, smaller accents around the can — hide the cut-outs that would sit
+     in the lower (copy) half, keep the upper ones small. */
   .photo {
     opacity: 0.9;
-    max-width: 33vw;
-    max-height: 26vh;
+    max-width: 24vw;
+    max-height: 15vh;
     object-fit: contain;
+  }
+
+  .photo[data-i="2"],
+  .photo[data-i="3"],
+  .photo[data-i="5"],
+  .photo[data-i="7"],
+  .photo[data-i="9"] {
+    display: none;
   }
 }

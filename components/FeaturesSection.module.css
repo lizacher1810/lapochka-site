@@ -44,6 +44,12 @@
   pointer-events: none;
 }
 
+/* Transparent on desktop so each feature keeps its absolute position; becomes
+   the centered vertical stack on mobile. */
+.featuresList {
+  display: contents;
+}
+
 .feature {
   position: absolute;
   z-index: 20;
@@ -102,54 +108,63 @@
 }
 
 @media (max-width: 768px) {
-  /* Stacked mobile layout: the four features run down the left column in
-     DOM order, the can (canvas) sits off to the right. */
-  .feature {
+  /* The four blurbs run down a left column, evenly spaced and centered on the
+     screen height; the can (canvas) sits off to the right. */
+  .featuresList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 34px;
+    position: absolute;
+    z-index: 20;
     left: 5%;
-    width: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54%;
+    height: 100%;
+    padding: 5% 0;
+  }
+
+  .feature {
+    position: static;
+    left: auto;
+    top: auto;
+    width: 100%;
   }
 
   .feature h3 {
     white-space: normal;
-    font-size: 21px;
+    font-size: 20px;
     margin-bottom: 0.4rem;
+  }
+
+  /* First heading stays on one line, as in the mock. */
+  .featureTopLeft h3 {
+    white-space: nowrap;
   }
 
   .feature p {
     font-size: 13px;
   }
 
-  .featureTopLeft {
-    top: 6%;
-  }
-
-  .featureBottomLeft {
-    top: 29%;
-  }
-
-  .featureTopRight {
-    left: 5%;
-    top: 51%;
-  }
-
-  .featureBottomRight {
-    left: 5%;
-    top: 73%;
-  }
-
   .ghostText {
     font-size: 15vw;
   }
 
+  /* A few small accents on the right / corners, none over the left text. */
   .photo {
-    max-width: 26vw;
-    max-height: 20vh;
+    max-width: 22vw;
+    max-height: 16vh;
     object-fit: contain;
   }
 
+  .photo[data-i="0"],
+  .photo[data-i="2"],
+  .photo[data-i="6"] {
+    display: none;
+  }
+
   .cta {
-    top: 92%;
-    padding: 0.9rem 2rem;
-    font-size: 0.95rem;
+    display: none;
   }
 }

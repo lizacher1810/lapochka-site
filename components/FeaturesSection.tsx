@@ -76,6 +76,7 @@ export function FeaturesSection() {
           key={i}
           src={asset(photo.src)}
           alt=""
+          data-i={i}
           className={styles.photo}
           style={{
             ...photo.style,
@@ -86,33 +87,35 @@ export function FeaturesSection() {
         />
       ))}
 
-      <div className={`${styles.feature} ${styles.featureTopLeft}`}>
-        <h3>необычный вкус</h3>
-        <p>
-          Черника, саган-дайля и лаванда создают мягкое ягодно-цветочное
-          сочетание, которого не встретишь в обычном лимонаде.
-        </p>
-      </div>
-      <div className={`${styles.feature} ${styles.featureBottomLeft}`}>
-        <h3>без сахара</h3>
-        <p>
-          Освежающий вкус без добавленного сахара — лёгкий вариант для тех,
-          кто выбирает меньше сладости.
-        </p>
-      </div>
-      <div className={`${styles.feature} ${styles.featureTopRight}`}>
-        <h3>натуральный состав</h3>
-        <p>
-          Только понятные ингредиенты и натуральные растительные компоненты —
-          ничего лишнего.
-        </p>
-      </div>
-      <div className={`${styles.feature} ${styles.featureBottomRight}`}>
-        <h3>вдохновлён природой</h3>
-        <p>
-          В напитке встретились ягоды, цветы и сибирская трава — всё то, что
-          делает вкус особенным и узнаваемым.
-        </p>
+      <div className={styles.featuresList}>
+        <div className={`${styles.feature} ${styles.featureTopLeft}`}>
+          <h3>необычный вкус</h3>
+          <p>
+            Черника, саган-дайля и лаванда создают мягкое ягодно-цветочное
+            сочетание, которого не встретишь в обычном лимонаде.
+          </p>
+        </div>
+        <div className={`${styles.feature} ${styles.featureBottomLeft}`}>
+          <h3>без сахара</h3>
+          <p>
+            Освежающий вкус без добавленного сахара — лёгкий вариант для тех,
+            кто выбирает меньше сладости.
+          </p>
+        </div>
+        <div className={`${styles.feature} ${styles.featureTopRight}`}>
+          <h3>натуральный состав</h3>
+          <p>
+            Только понятные ингредиенты и натуральные растительные компоненты —
+            ничего лишнего.
+          </p>
+        </div>
+        <div className={`${styles.feature} ${styles.featureBottomRight}`}>
+          <h3>вдохновлён природой</h3>
+          <p>
+            В напитке встретились ягоды, цветы и сибирская трава — всё то, что
+            делает вкус особенным и узнаваемым.
+          </p>
+        </div>
       </div>
 
       <button className={styles.cta}>попробовать</button>
